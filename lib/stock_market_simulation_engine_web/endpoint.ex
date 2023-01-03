@@ -7,7 +7,7 @@ defmodule StockMarketSimulationEngineWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_stock_market_simulation_engine_key",
-    signing_salt: "X0EH54P2"
+    signing_salt: "s6Ue7K74"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]

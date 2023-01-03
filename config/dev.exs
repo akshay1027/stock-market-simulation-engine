@@ -7,8 +7,8 @@ config :stock_market_simulation_engine, StockMarketSimulationEngine.Repo,
   hostname: "localhost",
   database: "stock_market_simulation_engine_dev",
   stacktrace: true,
-  port: "5500",
   show_sensitive_data_on_connection_error: true,
+  port: 5500,
   pool_size: 10
 
 # For development, we disable any cache and enable
@@ -24,7 +24,7 @@ config :stock_market_simulation_engine, StockMarketSimulationEngineWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "GvJaghKtvn8HgMkDAXT+It2OTD7LoP8X9HsZbI9wuuOAwrtzufRRpiPyak1A/G5A",
+  secret_key_base: "tJqFb9wOMZcCRwjDnXS3YfxNA3UYS7VS9hLRlMiKgyhmPYdk8Hjg7uqlmvYPBJwz",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}

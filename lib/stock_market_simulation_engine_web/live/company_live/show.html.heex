@@ -1,0 +1,46 @@
+<h1>Show Company</h1>
+
+<%= if @live_action in [:edit] do %>
+  <.modal return_to={Routes.company_show_path(@socket, :show, @company)}>
+    <.live_component
+      module={StockMarketSimulationEngineWeb.CompanyLive.FormComponent}
+      id={@company.id}
+      title={@page_title}
+      action={@live_action}
+      company={@company}
+      return_to={Routes.company_show_path(@socket, :show, @company)}
+    />
+  </.modal>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @company.name %>
+  </li>
+
+  <li>
+    <strong>Industry:</strong>
+    <%= @company.industry %>
+  </li>
+
+  <li>
+    <strong>Stock prise:</strong>
+    <%= @company.stock_prise %>
+  </li>
+
+  <li>
+    <strong>Volatility:</strong>
+    <%= @company.volatility %>
+  </li>
+
+  <li>
+    <strong>Company:</strong>
+    <%= @company.company_id %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.company_show_path(@socket, :edit, @company), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.company_index_path(@socket, :index) %></span>

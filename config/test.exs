@@ -17,7 +17,7 @@ config :stock_market_simulation_engine, StockMarketSimulationEngine.Repo,
 # you can enable the server option below.
 config :stock_market_simulation_engine, StockMarketSimulationEngineWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "iUO095SX+z2an4cX5Ck+KXb2pOa2jfRRrg7x9hY0HFeqkieoyA/nSH5SkhJNfNcM",
+  secret_key_base: "tOqvAp9Rqo0FJ99216knvXM/t7yxgm9R3TA74szk8QrUAQZBodk9UIdeBLrKpSIb",
   server: false
 
 # In test we don't send emails.

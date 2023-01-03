@@ -1,12 +1,12 @@
-defmodule StockMarketSimulationEngine.Stock do
+defmodule StockMarketSimulationEngine.Stock_exchange do
   @moduledoc """
-  The Stock context.
+  The Stock_exchange context.
   """
 
   import Ecto.Query, warn: false
   alias StockMarketSimulationEngine.Repo
 
-  alias StockMarketSimulationEngine.Stock.Company
+  alias StockMarketSimulationEngine.Stock_exchange.Company
 
   @doc """
   Returns the list of companies.
@@ -101,3 +101,4 @@ defmodule StockMarketSimulationEngine.Stock do
   def change_company(%Company{} = company, attrs \\ %{}) do
     Company.changeset(company, attrs)
   end
+end

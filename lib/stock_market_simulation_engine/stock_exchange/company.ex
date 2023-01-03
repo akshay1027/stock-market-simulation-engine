@@ -1,4 +1,4 @@
-defmodule StockMarketSimulationEngine.Stock.Company do
+defmodule StockMarketSimulationEngine.Stock_exchange.Company do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -6,7 +6,7 @@ defmodule StockMarketSimulationEngine.Stock.Company do
     field :company_id, :string
     field :industry, :string
     field :name, :string
-    field :stock_price, :decimal
+    field :stock_prise, :decimal
     field :volatility, :decimal
 
     timestamps()
@@ -15,9 +15,8 @@ defmodule StockMarketSimulationEngine.Stock.Company do
   @doc false
   def changeset(company, attrs) do
     company
-    |> cast(attrs, [:name, :stock_price, :company_id, :volatility, :industry])
-    |> validate_required([:name, :stock_price, :company_id, :volatility, :industry])
-    |> unique_constraint(:company_id)
+    |> cast(attrs, [:name, :industry, :stock_prise, :volatility, :company_id])
+    |> validate_required([:name, :industry, :stock_prise, :volatility, :company_id])
     |> unique_constraint(:name)
   end
 end

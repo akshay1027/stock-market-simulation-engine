@@ -18,7 +18,10 @@ defmodule StockMarketSimulationEngineWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources "/company", ProductController
+    live "/companies", CompanyLive.Index, :index
+    live "/companies/new", CompanyLive.Index, :new
+    live "/companies/:id", CompanyLive.Show, :show
+    live "/companies/:id/show/edit", CompanyLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.

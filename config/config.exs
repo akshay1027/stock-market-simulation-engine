@@ -15,7 +15,7 @@ config :stock_market_simulation_engine, StockMarketSimulationEngineWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [view: StockMarketSimulationEngineWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: StockMarketSimulationEngine.PubSub,
-  live_view: [signing_salt: "IAm364An"]
+  live_view: [signing_salt: "+buU9Dje"]
 
 # Configures the mailer
 #
