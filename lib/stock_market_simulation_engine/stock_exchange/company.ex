@@ -15,8 +15,9 @@ defmodule StockMarketSimulationEngine.Stock_exchange.Company do
   @doc false
   def changeset(company, attrs) do
     company
-    |> cast(attrs, [:name, :industry, :stock_prise, :volatility, :company_id])
-    |> validate_required([:name, :industry, :stock_prise, :volatility, :company_id])
+    |> cast(attrs, [:name, :industry, :stock_prise, :volatility])
+    |> validate_required([:name, :industry, :stock_prise, :volatility])
     |> unique_constraint(:name)
+    |> validate_length(:name, min: 2, max: 100)
   end
 end

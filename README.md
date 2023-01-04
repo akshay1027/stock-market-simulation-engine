@@ -8,6 +8,7 @@
 1) Using Read API, show charts of prise changing for each company.
 
 
-## Todo:
-company table decimal values updation
-checking on company APIs
+## Todo 3|3|23:
+Am able to make the companies but there is some problem with editing the companies. I have sem exam on 7|3|23. I will continue again from that day.  
+
+![image](https://user-images.githubusercontent.com/65683151/210415407-a0b17c8f-07b2-42a8-b230-dcae4214a91f.png)
