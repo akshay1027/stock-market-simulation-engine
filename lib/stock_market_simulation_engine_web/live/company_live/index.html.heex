@@ -20,7 +20,7 @@
       <th>Industry</th>
       <th>Stock prise</th>
       <th>Volatility</th>
-      <th>Company</th>
+      <th>Id</th>
 
       <th></th>
     </tr>
@@ -36,7 +36,6 @@
 
         <td>
           <span><%= live_redirect "Show", to: Routes.company_show_path(@socket, :show, company) %></span>
-          <span><%= live_patch "Edit", to: Routes.company_index_path(@socket, :edit, company) %></span>
           <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: company.id, data: [confirm: "Are you sure?"] %></span>
         </td>
       </tr>
