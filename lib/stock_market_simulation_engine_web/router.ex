@@ -21,7 +21,7 @@ defmodule StockMarketSimulationEngineWeb.Router do
     live "/companies", CompanyLive.Index, :index
     live "/companies/new", CompanyLive.Index, :new
     live "/companies/:id", CompanyLive.Show, :show
-    live "/companies/:id/show/edit", CompanyLive.Show, :edit
+    live "/companies/:id/edit", CompanyLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.

@@ -25,10 +25,6 @@
     <%= number_input f, :volatility, step: "any" %>
     <%= error_tag f, :volatility %>
 
-    <%= label f, :company_id %>
-    <%= text_input f, :company_id %>
-    <%= error_tag f, :company_id %>
-
     <div>
       <%= submit "Save", phx_disable_with: "Saving..." %>
     </div>

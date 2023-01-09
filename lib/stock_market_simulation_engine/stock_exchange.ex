@@ -4,6 +4,7 @@ defmodule StockMarketSimulationEngine.Stock_exchange do
   """
 
   import Ecto.Query, warn: false
+  import Ecto
   alias StockMarketSimulationEngine.Repo
 
   alias StockMarketSimulationEngine.Stock_exchange.Company
@@ -50,7 +51,9 @@ defmodule StockMarketSimulationEngine.Stock_exchange do
 
   """
   def create_company(attrs \\ %{}) do
-    %Company{}
+    # Generate uuid
+    companyId = Ecto.UUID.generate
+    %Company{ company_id: companyId }
     |> Company.changeset(attrs)
     |> Repo.insert()
   end
