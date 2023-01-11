@@ -1,0 +1,40 @@
+<h1>Listing Companies</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <.modal return_to={Routes.company_index_path(@socket, :index)}>
+    <.live_component
+      module={StockMarketSimulationEngineWeb.CompanyLive.FormComponent}
+      id={@company.id || :new}
+      title={@page_title}
+      action={@live_action}
+      company={@company}
+      return_to={Routes.company_index_path(@socket, :index)}
+    />
+  </.modal>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Industry</th>
+      <th>Stock prise</th>
+      <th>Volatility</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="companies">
+    <%= for company <- @companies do %>
+      <tr id={"company-#{company.id}"}>
+        <td><%= company.name %></td>
+        <td><%= company.industry %></td>
+        <td><%= company.stock_prise %></td>
+        <td><%= company.volatility %></td>
+        <td>
+          <span><%= live_redirect "Show", to: Routes.company_show_path(@socket, :show, company) %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
