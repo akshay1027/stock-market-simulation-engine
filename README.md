@@ -19,3 +19,16 @@ Am able to make the companies but there is some problem with editing the compani
 - [X] The adding companies part, private API. 
 - [] how I can simulate the data in backend every 1 or 2 seconds once a request is made for a company s stock and stream it to the frontend.  
 - [ ] Then will look to consume it in frontend using some chart library, have made some research on found some libraries, have to try them out!
+
+
+## Create a socket endpoint:
+mix phx.gen.socket Stock_exchange
+
+## create a channel:
+mix phx.gen.channel Company
+
+## Websockets:
+Request -> Socket -> Channel -> Topic -> Response
+
+
+![image](https://user-images.githubusercontent.com/65683151/212335321-5797a71f-721e-4650-b5b7-6414f015aa04.png)

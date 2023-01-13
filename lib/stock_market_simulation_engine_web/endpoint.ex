@@ -10,6 +10,10 @@ defmodule StockMarketSimulationEngineWeb.Endpoint do
     signing_salt: "s6Ue7K74"
   ]
 
+  socket "/socket", StockMarketSimulationEngineWeb.StockExchangeSocket,
+  websocket: true,
+  longpoll: false
+
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
   # Serve at "/" the static files from "priv/static" directory.
