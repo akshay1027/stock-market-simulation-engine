@@ -38,9 +38,9 @@ Request -> Socket -> Channel -> Topic -> Response
 - [X] Continously streaming data from backend to frontend.
 - [X] Get company_id through request.
 - [X] Using company_id, interact with DB. 
-- [ ] Before streaming data to client, change the data from db and send to client. Getting data from DB has to be done only once to improve performance.
-- [ ] Add/Assign company_id and stock_prise to socket state so that it can be passed around within phoenix callbacks/handlers.
-- [ ] 
+- [X] Before streaming data to client, change the data from db and send to client. Getting data from DB has to be done only once to improve performance.
+- [X] Add/Assign company_id and stock_prise to socket state so that it can be passed around within phoenix callbacks/handlers.
+- [X] Change stock prise in a unpredictable way and stream t0 client
 
 ## Frontend features:
 - [ ] Setup flutter and its environment
@@ -48,6 +48,12 @@ Request -> Socket -> Channel -> Topic -> Response
 - [ ] Consume Phoenicx websocket APIs
 - [ ] Decide how to stream the incoming data in chart form
 - [ ]
-
+  
 
 - Messages that do not come from GenServer.call/2 or GenServer.cast/2 are handled by the handle_info/2 callback.  
+
+## 16|01|23 || 09:02 PM  
+- Ideally using company_id, i will get the stock_prise from db in handle_in and send only this stock_prise data to handle_info. That would be best!  
+
+## 16|01|23 || 09:27 PM  
+- Done, making DB request once in handle, getting the stock_prise, assigning it to socket state, calling a timer, all these in handle_in. In handle_info just pushing the stock_prise to client. Handle_info is called every 2 seconds by the timer in handle_in.  
