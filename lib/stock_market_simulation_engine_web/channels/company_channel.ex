@@ -1,5 +1,6 @@
 defmodule StockMarketSimulationEngineWeb.CompanyChannel do
   use StockMarketSimulationEngineWeb, :channel
+  alias StockMarketSimulationEngine.Stock_exchange
 
   # Intial connection establishment between client and websocket server
   @impl true
@@ -11,19 +12,38 @@ defmodule StockMarketSimulationEngineWeb.CompanyChannel do
     end
   end
 
+  # @impl true
+  # def handle_in("shout", payload, socket) do
+  #   # randomNumber = :rand.uniform(1) |> Float.round(2)
+  #   :timer.send_interval(2_000, :ping)
+  #   # broadcast(socket, "shout", payload)
+  #   {:noreply, socket}
+  # end
+
+  # @impl true
+  # def handle_info(:ping, socket) do
+  #   count = socket.assigns[:count] || 1
+  #   push(socket, "ping", %{count: count})
+  #   {:noreply, assign(socket, :count, count + 1)}
+  # end
+
   @impl true
-  def handle_in("data:" <> video_id, payload, socket) do
-    # randomNumber = :rand.uniform(1) |> Float.round(2)
-    :timer.send_interval(2_000, :ping)
-    # broadcast(socket, "shout", payload)
+  def handle_in("stock_data:" <> company_id, payload, socket) do
+    company_id = String.to_integer(company_id)
+    # IO.put("compandyID = ✨ ", company_id)
+    assign(socket, :company_id, company_id)
+    :timer.send_interval(2_000, :ping_stock_data)
     {:noreply, socket}
   end
 
   @impl true
-  def handle_info(:ping, socket) do
-    count = socket.assigns[:count] || 1
-    push(socket, "ping", %{count: count})
-    {:noreply, assign(socket, :count, count + 1)}
+  def handle_info(:ping_stock_data, socket) do
+    company_id = 8
+    # IO.put("compandyID = ✨ ", company_id)
+    data = Stock_exchange.get_company!(company_id)
+    push(socket, "ping_stock_data", %{data: data.stock_prise})
+    {:noreply, assign(socket, :company_id, company_id)}
+    # {:noreply, assign(socket, :count, count + 1)}
   end
 
   # intercept ["new_msg"]

@@ -61,9 +61,11 @@ channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
   .receive("error", resp => { console.log("Unable to join", resp) })
 
-channel.on("ping", ({ count }) => console.log("PING", count))
+// counter for timer
+channel.on("ping_stock_data", ({ data }) => console.log("PING", data))
 
-channel.push("shout", { message: "mapla!" })
+// timer initilization
+channel.push("stock_data:8", { message: "mapla!" })
 
 channel.on("shout", (payload) => console.log(payload))
 

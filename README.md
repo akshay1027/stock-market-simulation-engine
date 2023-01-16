@@ -15,9 +15,9 @@ Am able to make the companies but there is some problem with editing the compani
 - Solved on 7|1|23
 
 
-## Todo 9|1|23
+## Todo 9|1|23 | Find out the idea
 - [X] The adding companies part, private API. 
-- [] how I can simulate the data in backend every 1 or 2 seconds once a request is made for a company s stock and stream it to the frontend.  
+- [X] how I can simulate the data in backend every 1 or 2 seconds once a request is made for a company s stock and stream it to the frontend.  
 - [ ] Then will look to consume it in frontend using some chart library, have made some research on found some libraries, have to try them out!
 
 
@@ -32,3 +32,22 @@ Request -> Socket -> Channel -> Topic -> Response
 
 
 ![image](https://user-images.githubusercontent.com/65683151/212335321-5797a71f-721e-4650-b5b7-6414f015aa04.png)
+
+
+## Backend features:
+- [X] Continously streaming data from backend to frontend.
+- [X] Get company_id through request.
+- [X] Using company_id, interact with DB. 
+- [ ] Before streaming data to client, change the data from db and send to client. Getting data from DB has to be done only once to improve performance.
+- [ ] Add/Assign company_id and stock_prise to socket state so that it can be passed around within phoenix callbacks/handlers.
+- [ ] 
+
+## Frontend features:
+- [ ] Setup flutter and its environment
+- [ ] Learn how to setup flutter client for websocket 
+- [ ] Consume Phoenicx websocket APIs
+- [ ] Decide how to stream the incoming data in chart form
+- [ ]
+
+
+- Messages that do not come from GenServer.call/2 or GenServer.cast/2 are handled by the handle_info/2 callback.  
