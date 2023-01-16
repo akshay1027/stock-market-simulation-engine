@@ -65,7 +65,7 @@ channel.join()
 channel.on("ping_stock_data", ({ data }) => console.log("PING", data))
 
 // timer initilization
-channel.push("stock_data:8", { message: "mapla!" })
+channel.push("stock_data:9", { message: "mapla!" })
 
 channel.on("shout", (payload) => console.log(payload))
 
