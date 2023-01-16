@@ -35,7 +35,7 @@ Request -> Socket -> Channel -> Topic -> Response
 
 
 ## Backend features:
-- [X] Continously streaming data from backend to frontend.
+- [X] Continously streaming data from backend to frontend using websockets.
 - [X] Get company_id through request.
 - [X] Using company_id, interact with DB. 
 - [X] Before streaming data to client, change the data from db and send to client. Getting data from DB has to be done only once to improve performance.
@@ -57,3 +57,6 @@ Request -> Socket -> Channel -> Topic -> Response
 
 ## 16|01|23 || 09:27 PM  
 - Done, making DB request once in handle, getting the stock_prise, assigning it to socket state, calling a timer, all these in handle_in. In handle_info just pushing the stock_prise to client. Handle_info is called every 2 seconds by the timer in handle_in.  
+
+## 16|01|23 || 11:01 PM 
+- All backend features done ✨🕉️.  
