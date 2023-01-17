@@ -48,7 +48,7 @@ defmodule StockMarketSimulationEngineWeb.CompanyChannel do
   end
 end
 
-#-------------------- DEVELOPMENT CODE: Uncommenting these and storing them so that i can remeber how i arrived at the above code. -----------------------------
+#-------------------- DEVELOPMENT CODE: commenting these and storing them so that i can remeber how i arrived at the above code. -----------------------------
 
   # @impl true
   # def handle_in("shout", payload, socket) do
